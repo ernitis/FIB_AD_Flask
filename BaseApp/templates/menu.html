@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Menu{% endblock %}
+{% block content %}
+<br>
+<br>
+<div class="ui container text compact segment">
+    <h1>Menu Page</h1>
+
+    <p>Hello, {{session['username']}}! What do you want to do?</p>
+    
+    <form action="{{ url_for('addImage') }}" method="GET">
+        <button type="submit" class="ui green button">Add Image</button>
+    </form>
+
+    <br>
+                
+    <form action="{{ url_for('userImages') }}" method="GET">
+        <button type="submit" class="ui blue button">My Images</button>
+    </form>
+    
+    <br>
+    
+    <div class="ui container">
+        <form action="{{ url_for('searchImages') }}" method="GET">
+            <button type="submit" class="ui blue button">Search Images</button>
+        </form>
+    </div>
+
+    <br>
+    
+    <div class="ui container">
+        <form action="{{ url_for('deleteUser') }}" method="POST">
+            <button type="submit" class="ui red button" onclick="return confirm('Are you sure you want to DELETE this User?');">Delete User</button>
+        </form>
+    </div>
+    
+    <br>
+    
+    <center>
+        <form action="{{ url_for('logout') }}" method="GET">
+            <button type="submit" class="ui orange button" >Logout</button>
+        </form>
+    </center>
+</div>
+{% endblock %}

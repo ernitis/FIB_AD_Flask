@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Filters{% endblock %}
+{% block content %}
+<center>
+<img src="{{ url_for('static', filename='uploads/' ~ image.creator ~ '/' ~ image.filename) }}" alt="Image" width="400px" />
+{% if tempUrl %}
+<img src="{{ tempUrl }}" alt="Image" width="400px" />
+{% else %}
+<img src="{{ url_for('static', filename='uploads/' ~ image.creator ~ '/' ~ image.filename) }}" alt="Image" width="400px" />
+{% endif %}
+<div class="ui container" style="display: flex; justify-content: center; gap: 10px; margin-top: 50px;">
+    <form action="{{ url_for('imageFilters', id=image.id) }}" method="GET">
+        <input type="hidden" name="filter" value="1">
+        <button type="submit" class="ui button teal">Filter 1</button>
+    </form>
+    <form action="{{ url_for('imageFilters', id=image.id) }}" method="GET">
+        <input type="hidden" name="filter" value="2">
+        <button type="submit" class="ui button teal">Filter 2</button>
+    </form>
+    <form action="{{ url_for('imageFilters', id=image.id) }}" method="GET">
+        <input type="hidden" name="filter" value="3">
+        <button type="submit" class="ui button teal">Filter 3</button>
+    </form>
+</div>
+
+<br>
+<br>
+<a href="{{ url_for('menu') }}" class="ui blue button">Back to Menu</a>
+
+</center>
+{% endblock %}

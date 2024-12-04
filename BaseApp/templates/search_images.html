@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Images{% endblock %}
+{% block content %}
+<div class="ui container text compact segment">
+    <h1>Search Images:</h1>
+    <br>
+
+    <form class="ui form" action="{{ url_for('searchImages') }}" method="POST">
+        <!-- Title input -->
+        <div class="field">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br><br>
+        </div>
+
+        <!-- Description input -->
+        <div class="field">
+            <label for="description">Description:</label><br>
+            <input type="text" id="description" name="description"><br><br>
+        </div>
+
+        <!-- Keywords input -->
+        <div class="field">
+            <label for="keywords">Keywords:</label><br>
+            <input type="text" id="keywords" name="keywords"><br><br>
+        </div>
+
+        <!-- Author input -->
+        <div class="field">
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author"><br><br>
+        </div>
+
+        <!-- Submit button -->
+        <input type="submit" value="Search" class="ui button blue">
+    </form>
+    <br>
+    <a href="{{ url_for('menu') }}" class="ui blue button">Back to Menu</a>
+</div>
+{% endblock %}

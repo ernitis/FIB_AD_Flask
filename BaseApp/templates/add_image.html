@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Menu{% endblock %}
+{% block content %}
+<div class="ui container text compact segment">
+    <h1>Upload an Image</h1>
+
+    <form action="{{ url_for('addImage') }}" method="POST" enctype="multipart/form-data" class="ui form">
+        <!-- Title input -->
+        <div class="field">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        </div>
+
+        <!-- Description input -->
+        <div class="field">
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description" required></textarea><br><br>
+        </div>
+
+        <!-- Keywords input -->
+        <div class="field">
+        <label for="keywords">Keywords:</label><br>
+        <input type="text" id="keywords" name="keywords" required><br><br>
+        </div>
+
+        <!-- Keywords input -->
+        <div class="field">
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author" required><br><br>
+        </div>
+
+        <!-- Date of Creation -->
+        <div class="field">
+        <label for="creationDate">Date of Creation:</label><br>
+        <input type="date" id="creationDate" name="creationDate" required><br><br>
+        </div>
+
+        <!-- Input Image -->
+        <div class="field">
+        <label for="image">Select an image (PNG, JPG, TIFF, WEBP):</label><br>
+        <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/tiff, image/webp" required><br><br>
+        </div>
+
+        <!-- Creator (auto-filled from session) -->
+        <!-- <label for="creator">Creator:</label><br>  -->
+        <input type="hidden" id="creator" name="creator" value="{{ session['username'] }}" readonly>
+
+        <!-- Submit button -->
+        <input type="submit" value="Upload Image" class="ui button green">
+    </form>
+
+    <br>
+    <a href="{{ url_for('menu') }}" class="ui blue button">Back to Menu</a>
+</div>
+{% endblock %}

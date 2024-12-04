@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Modify Image{% endblock %}
+{% block content %}
+<br>
+<br>
+<center>
+    <img src="{{ url_for('static', filename='uploads/' ~ image.creator ~ '/' ~ image.filename) }}" alt="Image" width="400px" />
+</center>
+<br>
+<div class="ui container text compact segment">
+    <form action="{{ url_for('modifyImage') }}" method="POST" class="ui form">
+
+        <input type="hidden" id="id" name="id" value="{{ image.id}}" >
+        
+        <!-- Title input -->
+        <div class="field">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{ image.title }}" required>
+        </div>
+
+        <!-- Description input -->
+        <div class="field">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{{ image.description }}</textarea>
+        </div>
+        <!-- Keywords input -->
+        <div class="field">
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" name="keywords" value="{{ image.keywords }}" required>
+        </div>
+
+        <!-- Author input -->
+        <div class="field">
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" value="{{ image.author }}" required>
+        </div>
+
+        <!-- Date of Creation -->
+        <div class="field">
+        <label for="creationDate">Date of Creation:</label>
+        <input type="date" id="creationDate" name="creationDate" value="{{ image.creationDate }}" required>
+        </div>
+
+        <!-- Submit button to update the image -->
+        <input type="submit" value="Update Data" class="ui green button">
+    </form>
+
+    <br>
+
+    <!-- Button to delete the image -->
+    <form action="{{ url_for('deleteImage') }}" method="POST">
+        <!-- Pass the image ID and file name for deletion -->
+        <input type="hidden" id="id" name="id" value="{{ image.id }}">
+        <input type="submit" value="Delete Image" class="ui button red" onclick="return confirm('Are you sure you want to delete this image?');">
+    </form>
+
+    <br>
+    <a href="{{ url_for('userImages')}}" class="ui blue button">My Images</a>
+</div>
+{% endblock %}

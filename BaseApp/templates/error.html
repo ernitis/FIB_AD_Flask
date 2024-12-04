@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Error{% endblock %}
+{% block content %}
+<br>
+<br>
+<div class="ui container text compact segment">
+<h1>ERROR</h1>
+<br>
+
+<p style="color: red;">{{session['error']}}</p>
+<br>
+<a href="{{ url_for('index') }}" class="ui button blue">Home Page</a>
+</div>
+{% endblock %}

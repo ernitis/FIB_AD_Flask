@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block content %}
+<br>
+<br>
+<div class="ui container text compact segment">
+    <h1>Login</h1>
+    <br>
+    <form action = "{{ url_for('login') }}" method = "POST" class="ui form">
+        <div class="field">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="username" required>
+        </div>
+        <div class="field">
+            <label for="fpass">Password</label>
+            <input type="password" id="fpass" name="password" required>
+        </div>
+        <br>
+        <input type="submit" value="password" class="ui blue button">
+    </form>
+</div>
+<div class="ui container text compact segment">
+    <h1>Sign Up</h1>
+    <br>
+    <form action = "{{ url_for('signUp') }}" method = "POST" class="ui form">
+        <div class="field">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="username" required>
+        </div>
+        <div class="field">
+            <label for="fpass">Password</label>
+            <input type="password" id="fpass" name="password" required>
+        </div>
+        <br>
+        <input type="submit" value="Sign Up" class="ui blue button">
+    </form>
+</div>
+{% endblock %}
