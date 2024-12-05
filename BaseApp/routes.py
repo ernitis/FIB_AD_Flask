@@ -94,6 +94,11 @@ def register_routes(app, db):
 
     @app.route("/menu")
     def menu():
+        username = session.get("username")
+        if username:
+            user = User.query.filter_by(username=username).first()
+            if not user:
+                return redirect(url_for("index"))
         return render_template("menu.html")
 
     @app.route("/addImage", methods=["GET", "POST"])
