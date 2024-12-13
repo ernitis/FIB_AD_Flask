@@ -40,3 +40,12 @@ python3 run.py
 cd AppREST
 python3 app.py
 ```
+
+#### Optional: VSCode Extensions
+Recommended Extensions to facilitate Development
+**Python Extensions (Editor & Debug):**
+- Python by Microsoft
+- Python Debugger by Microsoft
+- Pylance by Microsoft
+**SQL Lite Extension (View and Edit)**
+- SQLite3 Editor by yy0931
