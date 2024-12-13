@@ -47,5 +47,6 @@ Recommended Extensions to facilitate Development
 - Python by Microsoft
 - Python Debugger by Microsoft
 - Pylance by Microsoft
+
 **SQL Lite Extension (View and Edit)**
 - SQLite3 Editor by yy0931
