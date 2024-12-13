@@ -43,6 +43,7 @@ python3 app.py
 
 #### Optional: VSCode Extensions
 Recommended Extensions to facilitate Development
+
 **Python Extensions (Editor & Debug):**
 - Python by Microsoft
 - Python Debugger by Microsoft
