@@ -7,9 +7,10 @@ from models import User, Image
 import error_codes
 import file_manager
 from datetime import date
+import globals
 
 
-REST_API_URL = "http://localhost:8080/"
+REST_API_URL = f"http://{globals.getIp()}:8080/"
 
 
 def register_routes(app, db):

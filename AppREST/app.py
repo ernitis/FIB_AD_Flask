@@ -2,6 +2,7 @@ from flask import Flask, request, send_file, jsonify
 from PIL import Image, ImageFilter
 import io
 from werkzeug.utils import secure_filename
+import sys
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16 MB limit
@@ -71,4 +72,5 @@ def apply_filter_3():
 
 
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    ip = sys.argv[1]
+    app.run(host=ip, port=8080, debug=True)
