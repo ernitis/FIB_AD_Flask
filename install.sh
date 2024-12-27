@@ -1,3 +1,7 @@
+#!/bin/bash
+sudo apt upgrade
+sudo apt-get install git python3 konsole -y
+
 pip3 install --upgrade flask watchdog
 pip3 install flask_sqlalchemy flask_migrate
 

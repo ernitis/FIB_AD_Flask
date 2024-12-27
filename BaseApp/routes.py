@@ -10,7 +10,7 @@ from datetime import date
 import globals
 
 
-REST_API_URL = f"http://{globals.getIp()}:8080/"
+REST_API_URL = f"http://{globals.getRestIp()}:8080/"
 
 
 def register_routes(app, db):

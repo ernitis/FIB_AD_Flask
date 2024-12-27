@@ -72,5 +72,7 @@ def apply_filter_3():
 
 
 if __name__ == "__main__":
-    ip = sys.argv[1]
+    ip = "localhost"
+    if len(sys.argv) == 2:
+        ip = sys.argv[1]
     app.run(host=ip, port=8080, debug=True)
