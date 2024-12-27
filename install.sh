@@ -7,7 +7,7 @@ pip3 install flask_sqlalchemy flask_migrate
 
 ip=$(ip route get 8.8.8.8 | awk -F"src " 'NR==1{split($2,a," ");print a[1]}')
 
-git clone https://github.com/CarlesBalsach/FIB_AD_Flask.git
+git clone https://github.com/ernitis/FIB_AD_Flask.git
 
 cd FIB_AD_Flask/
 
